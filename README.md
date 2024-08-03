@@ -23,23 +23,23 @@ Nodes/EC2 Instances
 
 ## Architecture Overview
 
-Kubernetes Cluster
+### Kubernetes Cluster
 * Control Plane Node
  * Runs kube-apiserver, etcd, kube-scheduler, kube-controller-manager, and cloud-controller-manager.
  * Handles overall cluster management.
 
-Worker Nodes
+### Worker Nodes
 * Runs kubelet and kube-proxy.
 * Hosts application pods.
 
-Application Components
+### Application Components
 * Telegram Bots
   * Two bots: one for development, one for production.
 * Microservices
   * yolo5 and polybot apps deployed in both dev and prod environments.
   * Monitored using Prometheus and Grafana.
 
-Pipelines
+### Pipelines
 * CI/CD Pipelines
   * Three pipelines per environment (dev and prod):
    * yolo5 build pipeline.
