@@ -22,7 +22,7 @@ Ingress-Nginx
 
 Grafana
 
-Prometheu
+Prometheus
 
 FluentD
 
