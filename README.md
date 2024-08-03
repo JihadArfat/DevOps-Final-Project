@@ -41,10 +41,10 @@ Application Components
 
 Pipelines
 * CI/CD Pipelines
- * Three pipelines per environment (dev and prod):
-  * yolo5 build pipeline.
-  * polybot build pipeline.
-  * Release pipeline.
+  * Three pipelines per environment (dev and prod):
+   * yolo5 build pipeline.
+   * polybot build pipeline.
+   * Release pipeline.
 * Uses Jenkins for automation.
 * Utilizes ArgoCD for deployment.
 
