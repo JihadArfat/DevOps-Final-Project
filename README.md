@@ -4,7 +4,7 @@
 This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
 
 ## Prerequisites
-1. Nodes/EC2 Instances
+Nodes/EC2 Instances
 * Node 1 (Control Plane): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
 * Node 2 (Worker Node): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
 
