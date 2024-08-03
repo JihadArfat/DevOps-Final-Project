@@ -22,13 +22,13 @@ This project demonstrates a CI/CD pipeline for a microservices architecture depl
 
 1. Create EKS Cluster:
 
-a- Create an EKS cluster using AWS Management Console or CLI.
-b- Configure kubectl to connect to the EKS cluster.
+* Create an EKS cluster using AWS Management Console or CLI.
+*  Configure kubectl to connect to the EKS cluster.
 
 2. Install Container Runtime:
 
-a- Install required tools: jq and awscli.
-b- Choose and install a container runtime (e.g., cri-o or containerd).
+* Install required tools: jq and awscli.
+*  Choose and install a container runtime (e.g., cri-o or containerd).
 
 3. Initialize Control Plane Node:
 
