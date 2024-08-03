@@ -1,6 +1,6 @@
 # DevOps Final Project
 ## Overview
-This project represents the culmination of our journey through the DevOps lifecycle, aiming to integrate modern technologies and best practices for efficient application deployment, scaling, monitoring, and management within Kubernetes clusters hosted on AWS. Additionally, CI/CD processes are streamlined using Jenkins to ensure seamless code integration and continuous delivery.
+In this project we cover the entire DevOps lifecycle, integrating cutting-edge technologies to automate deployment, scaling, monitoring, and management of applications within Kubernetes clusters hosted on AWS. Additionally, CI/CD processes are streamlined using Jenkins for efficient code integration and continuous delivery.
 
 ## Technologies Used
 
