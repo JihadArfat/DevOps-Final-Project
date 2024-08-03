@@ -4,38 +4,49 @@
 This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
 
 ## Prerequisites
-* AWS account with necessary permissions
-* kubectl installed
-* Helm installed
-* Jenkins installed and configured
-* ArgoCD installed and configured
+1. Nodes/EC2 Instances
+* Node 1 (Control Plane): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
+* Node 2 (Worker Node): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
 
-## Architecture
+## Setup Steps
+1. Main Node (Control Plane) Setup
 
-* Frontend Microservice: Customer-facing service.
-* Database: Managed by AWS (e.g., DynamoDB).
-* Background Microservices: Handle various backend tasks.
-* Communication: Both synchronous (HTTP request/response) and asynchronous (queues or topics).
-
-## Setup and Installation
-### Kubernetes Cluster on AWS
-
-1. Create EKS Cluster:
-
-* Create an EKS cluster using AWS Management Console or CLI.
-*  Configure kubectl to connect to the EKS cluster.
-
-2. Install Container Runtime:
-
-* Install required tools: jq and awscli.
-*  Choose and install a container runtime (e.g., cri-o or containerd).
-
-3. Initialize Control Plane Node:
-
-* Create IAM role with necessary permissions.
-* Set up security groups and EC2 instance.
 * Install kubeadm, kubelet, and kubectl.
-* Initialize the cluster with kubeadm init.
+* Configure the cluster with kubeadm init.
+* Install Flannel as the CNI to enable communication between pods.
+* Join the Worker Node to the cluster using the join command from kubeadm.
+
+2. Worker Node Setup
+
+* Install kubeadm, kubelet, and kubectl.
+* Join the cluster using the token and hash from the Control Plane setup.
+
+## Architecture Overview
+
+Kubernetes Cluster
+* Control Plane Node
+ * Runs kube-apiserver, etcd, kube-scheduler, kube-controller-manager, and cloud-controller-manager.
+ * Handles overall cluster management.
+
+Worker Nodes
+* Runs kubelet and kube-proxy.
+* Hosts application pods.
+
+Application Components
+* Telegram Bots
+ * Two bots: one for development, one for production.
+* Microservices
+ * yolo5 and polybot apps deployed in both dev and prod environments.
+ * Monitored using Prometheus and Grafana.
+
+Pipelines
+* CI/CD Pipelines
+ * Three pipelines per environment (dev and prod):
+  * yolo5 build pipeline.
+  * polybot build pipeline.
+  * Release pipeline.
+* Uses Jenkins for automation.
+* Utilizes ArgoCD for deployment.
 
 
 # Usage
