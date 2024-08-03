@@ -34,10 +34,10 @@ Worker Nodes
 
 Application Components
 * Telegram Bots
- * Two bots: one for development, one for production.
+  * Two bots: one for development, one for production.
 * Microservices
- * yolo5 and polybot apps deployed in both dev and prod environments.
- * Monitored using Prometheus and Grafana.
+  * yolo5 and polybot apps deployed in both dev and prod environments.
+  * Monitored using Prometheus and Grafana.
 
 Pipelines
 * CI/CD Pipelines
