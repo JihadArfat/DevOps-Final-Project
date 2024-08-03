@@ -9,17 +9,17 @@ Nodes/EC2 Instances
 * Node 2 (Worker Node): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
 
 ## Setup Steps
-1. ### Main Node (Control Plane) Setup
+### 1.Main Node (Control Plane) Setup
 
-* Install kubeadm, kubelet, and kubectl.
-* Configure the cluster with kubeadm init.
-* Install Flannel as the CNI to enable communication between pods.
-* Join the Worker Node to the cluster using the join command from kubeadm.
+  * Install kubeadm, kubelet, and kubectl.
+  * Configure the cluster with kubeadm init.
+  * Install Flannel as the CNI to enable communication between pods.
+  * Join the Worker Node to the cluster using the join command from kubeadm.
 
-2. ### Worker Node Setup
+### 2.Worker Node Setup
 
-* Install kubeadm, kubelet, and kubectl.
-* Join the cluster using the token and hash from the Control Plane setup.
+  * Install kubeadm, kubelet, and kubectl.
+  * Join the cluster using the token and hash from the Control Plane setup.
 
 ## Architecture Overview
 
