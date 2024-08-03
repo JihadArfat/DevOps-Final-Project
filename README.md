@@ -3,21 +3,34 @@
 This project represents the culmination of our journey through the DevOps lifecycle, aiming to integrate modern technologies and best practices for efficient application deployment, scaling, monitoring, and management within Kubernetes clusters hosted on AWS. Additionally, CI/CD processes are streamlined using Jenkins to ensure seamless code integration and continuous delivery.
 
 ## Technologies Used
-Kubernetes: Container orchestration platform for automating deployment, scaling, and management of containerized applications.
 
-AWS: Cloud platform providing a range of cloud services, including EC2 instances, EBS volumes, and managed Kubernetes service (EKS).
+Amazon Web Services (AWS)
 
-Ingress-Nginx: Open-source Kubernetes Ingress controller that manages external access to services within a Kubernetes cluster.
+Docker
 
-Grafana: Open-source platform for monitoring and observability with customizable dashboards.
+Kubernetes
 
-Prometheus: Open-source monitoring and alerting toolkit designed for reliability, scalability, and robustness.
+Git
 
-FluentD: Data collection and log forwarding for better log management and analytics.
+Github
 
-Helm: Kubernetes package manager for defining, installing, and upgrading Kubernetes applications.
+Python
 
-Jenkins: Open-source automation server used for CI/CD processes to automate the build, test, and deployment pipeline.
+Bash
+
+Ingress-Nginx
+
+Grafana
+
+Prometheu
+
+FluentD
+
+Helm
+
+Jenkins
+
+AegoCD
 
 ## Setup and Installation
 ### Prerequisites
