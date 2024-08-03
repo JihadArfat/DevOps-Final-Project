@@ -1,6 +1,7 @@
 # DevOps Final Project
-## Project Objective
-Design and implement a comprehensive CI/CD pipeline for a service deployed in a microservices architecture within Kubernetes.
+
+## Project Overview
+This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
 
 # Table of Contents
 
@@ -19,8 +20,7 @@ Project Structure
 Contributing
 License
 
-## Project Overview
-This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
+
 
 ## Prerequisites
 
