@@ -22,7 +22,7 @@ spec:
           - name: TELEGRAM_TOKEN
             value: "6920865650:AAFlBnucpRzJhexXQQSEdYaZ50EFiU60vn4"
           - name: TELEGRAM_APP_URL
-            value: "https://polybotjihad.devops-int-college.com/"
+            value: "https://polybotjihad.jihad.solutions/"
           - name: S3_BUCKET_NAME
             value: "jihadar"
           - name: AWS_ACCESS_KEY_ID

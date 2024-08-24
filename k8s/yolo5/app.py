@@ -11,7 +11,7 @@ import uuid
 
 images_bucket = os.environ['BUCKET_NAME']
 queue_name = os.environ['SQS_QUEUE_NAME']
-region_name = 'us-west-1'
+region_name = 'us-east-1'
 
 sqs_client = boto3.client('sqs', region_name=region_name)
 s3_client = boto3.client('s3', region_name=region_name)
