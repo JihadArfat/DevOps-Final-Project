@@ -10,10 +10,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - polybotjihad.devops-int-college.com
+        - polybotjihad.jihad.solutions
       secretName: tls-secret
   rules:
-    - host: polybotjihad.devops-int-college.com
+    - host: polybotjihad.jihad.solutions
       http:
         paths:
           - path: /
