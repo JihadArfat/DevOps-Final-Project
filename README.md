@@ -1,50 +1,53 @@
 # DevOps Final Project
-## Overview
-This project represents the culmination of our journey through the DevOps lifecycle, aiming to integrate modern technologies and best practices for efficient application deployment, scaling, monitoring, and management within Kubernetes clusters hosted on AWS. Additionally, CI/CD processes are streamlined using Jenkins to ensure seamless code integration and continuous delivery.
 
-## Technologies Used
-Kubernetes: Container orchestration platform for automating deployment, scaling, and management of containerized applications.
+## Project Overview
+This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
 
-AWS: Cloud platform providing a range of cloud services, including EC2 instances, EBS volumes, and managed Kubernetes service (EKS).
+## Prerequisites
+Nodes/EC2 Instances
+* Node 1 (Control Plane): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
+* Node 2 (Worker Node): Ubuntu-based image, minimum 4GB RAM, 2 CPUs.
 
-Ingress-Nginx: Open-source Kubernetes Ingress controller that manages external access to services within a Kubernetes cluster.
+## Setup Steps
+### 1.Main Node (Control Plane) Setup
 
-Grafana: Open-source platform for monitoring and observability with customizable dashboards.
+  * Install kubeadm, kubelet, and kubectl.
+  * Configure the cluster with kubeadm init.
+  * Install Flannel as the CNI to enable communication between pods.
+  * Join the Worker Node to the cluster using the join command from kubeadm.
 
-Prometheus: Open-source monitoring and alerting toolkit designed for reliability, scalability, and robustness.
+### 2.Worker Node Setup
 
-FluentD: Data collection and log forwarding for better log management and analytics.
+  * Install kubeadm, kubelet, and kubectl.
+  * Join the cluster using the token and hash from the Control Plane setup.
 
-Helm: Kubernetes package manager for defining, installing, and upgrading Kubernetes applications.
+## Architecture Overview
 
-Jenkins: Open-source automation server used for CI/CD processes to automate the build, test, and deployment pipeline.
+### Kubernetes Cluster
+* Control Plane Node
+ * Runs kube-apiserver, etcd, kube-scheduler, kube-controller-manager, and cloud-controller-manager.
+ * Handles overall cluster management.
 
-## Setup and Installation
-### Prerequisites
-#### * AWS account with necessary permissions
-#### * kubectl installed
-#### * Helm installed
-#### * Jenkins installed and configured
+### Worker Nodes
+* Runs kubelet and kube-proxy.
+* Hosts application pods.
 
-## Steps
-#### 1. Setting up Kubernetes Cluster on AWS:
+### Application Components
+* Telegram Bots
+  * Two bots: one for development, one for production.
+* Microservices
+  * yolo5 and polybot apps deployed in both dev and prod environments.
+  * Monitored using Prometheus and Grafana.
 
-##### * Create an EKS cluster using AWS Management Console or CLI.
-##### * Configure kubectl to connect to the EKS cluster.
+### Pipelines
+* CI/CD Pipelines
+  * Three pipelines per environment (dev and prod):
+   * yolo5 build pipeline.
+   * polybot build pipeline.
+   * Release pipeline.
+* Uses Jenkins for automation.
+* Utilizes ArgoCD for deployment.
 
-#### 2. Installing Ingress-Nginx:
 
-#### 3. Deploying Applications:
-Use kubectl apply to deploy your applications.
-
-
-#### 4. Setting up CI/CD with Jenkins:
-
-Install necessary plugins in Jenkins.
-Configure Jenkins pipelines for building, testing, and deploying your applications.
-
-#### 5. Monitoring with Grafana and Prometheus:
-Deploy Grafana and Prometheus using Helm.
-
-## Usage
-After completing the setup and installation, you can access your applications through the configured domain and monitor their performance and logs using Grafana and Prometheus dashboards.
+# Usage
+After completing the setup and installation, access your applications through the configured domain and monitor their performance and logs using Grafana and Prometheus dashboards. ArgoCD will continuously monitor your Git repository for changes and automatically synchronize the desired state with your Kubernetes cluster.

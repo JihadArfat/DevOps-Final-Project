@@ -60,7 +60,7 @@ class Bot:
 
 class ObjectDetectionBot:
     def __init__(self):
-        self.dynamodb_client = boto3.client('dynamodb', region_name='us-west-1')
+        self.dynamodb_client = boto3.client('dynamodb', region_name='us-east-1')
         self.telegram_bot_client = None
         self.telegram_token = None
         self.telegram_app_url = None
@@ -104,7 +104,7 @@ class ObjectDetectionBot:
                 logger.info("Sent message to SQS queue.")
 
                 # Send message to the Telegram end-user
-                self.send_text(msg['chat']['id'], 'Your image is being processed. please wait...')
+                self.send_text(msg['chat']['id'], 'Your image is being processed. please wait..')
                 logger.info("Sent message to Telegram user.")
 
     def is_current_msg_photo(self, msg):
@@ -136,9 +136,9 @@ class ObjectDetectionBot:
             return None
 
     def send_sqs_message(self, chat_id, img_name):
-        region = 'us-west-1'
+        region = 'us-east-1'
         sqs = boto3.client('sqs', region_name=region)
-        queue_url = 'https://sqs.us-west-1.amazonaws.com/352708296901/jihad'
+        queue_url = 'https://sqs.us-east-1.amazonaws.com/533267198104/jihad'
 
         message_body = {
             'chat_id': chat_id,
