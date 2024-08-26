@@ -1,6 +1,6 @@
 FROM ultralytics/yolov5:latest-cpu
 ENV BUCKET_NAME="jihadar"
-ENV SQS_QUEUE_NAME="https://sqs.us-west-1.amazonaws.com/352708296901/jihad"
+ENV SQS_QUEUE_NAME="https://sqs.us-east-1.amazonaws.com/533267198104/jihad"
 WORKDIR /usr/src/app
 RUN pip install --upgrade pip
 # Copy certificate and key files
