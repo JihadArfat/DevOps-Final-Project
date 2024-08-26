@@ -9,7 +9,7 @@ pipeline {
         stage('Update YAML') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'github2', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                        sh '''#!/bin/bash
+                        sh '''
                         printenv
 
                         if [[ $IMG_URL == *"polybot"* ]]; then
