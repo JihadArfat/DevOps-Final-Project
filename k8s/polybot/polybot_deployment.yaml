@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: polybot
-        image: IMG_URL
+        image: 533267198104.dkr.ecr.us-east-1.amazonaws.com/prod/polybot:0.0.13
         ports:
         - containerPort: 8443
         env:
