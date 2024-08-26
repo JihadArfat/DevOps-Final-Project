@@ -12,9 +12,9 @@ pipeline {
                         sh '''
                         printenv
 
-                        if echo "$IMG_URL" | grep -q "polybot"; then
+                        if [[ $IMG_URL == *"polybot"* ]]; then
                             yamlFile="k8s/polybot/polybot_deployment.yaml"
-                        elif echo "$IMG_URL" | grep -q "yolo5"; then
+                        elif [[ $IMG_URL == *"yolo5"* ]]; then
                             yamlFile="k8s/yolo5/yolo5_deployment.yaml"
                         else
                             exit 7
