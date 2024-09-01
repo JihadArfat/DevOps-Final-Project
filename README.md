@@ -1,7 +1,7 @@
 # DevOps Final Project
 
 ## Project Overview
-This project demonstrates a CI/CD pipeline for a microservices architecture deployed in a Kubernetes cluster on AWS. The pipeline includes automated build, test, and deployment processes for both development and production environments, using Jenkins and ArgoCD for continuous integration and continuous delivery.
+This project involved developing a CI/CD pipeline for a microservices architecture on AWS. It included deploying two Telegram chatbots, which process images through a series of services: receiving images from Telegram, placing them into S3 bucket and SQS queue, processing them with YOLOv5 for object detection, storing results in DynamoDB, and sending the detections back to the Telegram user. The application ran on a Kubernetes cluster with two EC2 nodes—one for the control plane and one for the worker node. The CI/CD pipeline, managed with Jenkins and ArgoCD, automated build, test, and deployment processes. Jenkins handled code changes and releases, while ArgoCD deployed updates to the Kubernetes cluster, ensuring seamless integration and delivery.
 
 ## Prerequisites
 Nodes/EC2 Instances
